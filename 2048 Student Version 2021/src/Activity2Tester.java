@@ -11,8 +11,9 @@ public class Activity2Tester {
 		
 		Random rnd = new Random(0);
 		System.out.println(rnd.nextInt(3));
-		
-		
+		System.out.println(rnd.nextInt(3));
+		System.out.println(rnd.nextInt(3));
+		System.out.println(rnd.nextInt(3));
 		
 		
 		
