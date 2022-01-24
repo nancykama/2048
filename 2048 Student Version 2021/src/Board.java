@@ -14,7 +14,7 @@ public class Board {
 		
 		// instantiate the board
 		board = new int[4][4];
-		populateOne();
+		populateOne(); // fill a tile
 		populateOne();
 	}
 
@@ -47,10 +47,21 @@ public class Board {
 		
 		//setup loops to visit
 		//every spot possible
+		String builder = "";
 		
+		//INSERTING NEW LINES
+		//builder += "\n"; //will force the next content to be in a new line
 		
+		// 1) write the nested loop necessary to traverse the 2D array
+		for (int r = 0; r < board.length; r++) {
+			for (int c = 0; c < board.length; c++) {	
+				builder += String.format("%04d", board[r][c]);
+				builder += " ";
+			}
+			builder += "\n";
+		}
 		
-		return "";
+		return builder; //return string representation
 	}
 
 	/*
