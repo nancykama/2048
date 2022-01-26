@@ -9,14 +9,9 @@ public class Activity2Tester {
 		//does it fill a random location? How about if the board is almost
 		//full? Does it still work?
 		
-		Random rnd = new Random(0);
-		System.out.println(rnd.nextInt(3));
-		System.out.println(rnd.nextInt(3));
-		System.out.println(rnd.nextInt(3));
-		System.out.println(rnd.nextInt(3));
-		
-		
-		
+		Board b = new Board();
+		b.populateOne();
+		System.out.println(b);
 	}
 
 }

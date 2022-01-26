@@ -3,7 +3,7 @@ import java.util.Random;
 public class Board {
  
 	private int[][] board; // holds state of game
-	private Random rnd = new Random(0); // setup random # generator
+	private Random rnd = new Random(); // setup random # generator
 	
 	//What instance variable can you add to keep track of the size or the number of tiles occupied?
 	
@@ -14,8 +14,6 @@ public class Board {
 		
 		// instantiate the board
 		board = new int[4][4];
-		populateOne(); // fill a tile
-		populateOne();
 	}
 
 	/*
@@ -44,9 +42,6 @@ public class Board {
 		 * System.out.println(String.format("%04d",x));
 		 *     
 		 */
-		
-		//setup loops to visit
-		//every spot possible
 		String builder = "";
 		
 		//INSERTING NEW LINES
@@ -64,6 +59,8 @@ public class Board {
 		return builder; //return string representation
 	}
 
+	
+	
 	/*
 	 * set one of the empty spaces (at random)
 	 * to a 2 or 4 (90/10 chance). an empty spot is defined to be a 0 element
@@ -81,11 +78,28 @@ public class Board {
 		// check if that tile is empty, if it is NOT empty,
 		// generate another set of row and column
 		// what happens if the entire board is full??! 
-		
-		
-		
-			
+		int r = rnd.nextInt(4);
+		int c = rnd.nextInt(4);
+		if (board[r][c] == 0) {
+					if (Math.random() < 0.9 ) {
+						board[r][c] = 2;
+					} else {
+						board[r][c] = 4;
+					}
+				}
+			}
 
+		
+	
+	
+	
+	//eraseBoard
+	public void eraseBoard() {
+		for (int r = 0; r < board.length; r++) {
+			for (int c = 0; c < board.length; c++) {
+				board[r][c] = 0; 
+			}
+		}
 	}
 
 	/*
@@ -100,7 +114,12 @@ public class Board {
 	 */
 
 	public void slideRight(int[] row) {
-		
+		int r = rnd.nextInt(4);
+		int c = rnd.nextInt(4);
+		if (c < 3 && board[r][c+1] == 0) {
+			board[r][c+1] = board[r][c];
+			board[r][c] = 0;
+		}
 
 	
 	}
@@ -117,7 +136,7 @@ public class Board {
 	 */
 
 	public void slideRight() {
-
+ 
 		// go through 2D array, move all digits as far right as possible
 		//setup a loop to grab ONE row at a time from 2d array board
 	
