@@ -6,18 +6,18 @@ public class Activity3Tester {
 		
 		//Declare a Board object
 		Board b3 = new Board ();
-		
+		b3.populateOne();
+		b3.populateOne();
+		b3.populateOne();
+		b3.populateOne();
 		//create an array with some values you want to 
 		//slideRight. ie [2 0 0 0]
-		
-		int[] arr3 = {0, 2, 0, 2};
-		
 		//invoke the slideRight method on the array 
-		b3.slideRight(arr3);
+		b3.slideRight();
 		
 		//print out the array to see if slideRight
 		//worked
-		System.out.println(Arrays.toString(arr3)); 
+		System.out.println(b3); 
 		
 		
 	}

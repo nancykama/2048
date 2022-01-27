@@ -114,11 +114,12 @@ public class Board {
 	 */
 
 	public void slideRight(int[] row) {
-		int r = rnd.nextInt(4);
-		int c = rnd.nextInt(4);
-		if (c < 3 && board[r][c+1] == 0) {
-			board[r][c+1] = board[r][c];
-			board[r][c] = 0;
+		for (int r = 0; r < row.length-1; r ++) {
+			if (row[r] != 0 && row[r+1] == 0) {
+				row[r+1] = row[r];
+				row[r] = 0;
+				
+			}
 		}
 
 	
@@ -136,10 +137,10 @@ public class Board {
 	 */
 
 	public void slideRight() {
- 
-		// go through 2D array, move all digits as far right as possible
-		//setup a loop to grab ONE row at a time from 2d array board
-	
+		for (int r = 0; r < board.length; r++) {
+			int[] temp = board[r];
+			slideRight(temp);
+		}   
 		
 	}
 
