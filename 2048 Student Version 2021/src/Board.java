@@ -115,14 +115,12 @@ public class Board {
 
 	public void slideRight(int[] row) {
 		for (int r = 0; r < row.length-1; r ++) {
-			if (row[r] != 0 && row[r+1] == 0) {
-				row[r+1] = row[r];
-				row[r] = 0;
-				
-			}
+				if (row[r] != 0 && row[r+1] == 0) {
+					row[r+1] = row[r];
+					row[r] = 0;	
+				}
 		}
 
-	
 	}
 
 	/*
