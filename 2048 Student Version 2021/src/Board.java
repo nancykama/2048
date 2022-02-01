@@ -114,14 +114,16 @@ public class Board {
 	 */
 
 	public void slideRight(int[] row) {
-		for (int r = 0; r < row.length-1; r ++) {
-				if (row[r] != 0 && row[r+1] == 0) {
-					row[r+1] = row[r];
-					row[r] = 0;	
+		
+		for (int i = 0; i < 3; i ++) {
+			for (int j = 0; j < row.length -1; j++) {
+				if (row[j] != 0 && row [j+1] == 0) {
+					row[j+1] = row[j];
+					row[j] = 0;	
 				}
-		}
-
+			}
 	}
+}
 
 	/*
 	 * 
@@ -152,9 +154,14 @@ public class Board {
 	 */
 
 	public void slideLeft(int[] arr) {
-		
-		
-		
+		for (int i = 0; i < 3; i ++) {
+			for (int j = 0; j < arr.length - 1; j++) {
+				if (arr[j+1] != 0 && arr [j] == 0) {
+					arr[j] = arr[j+1];
+					arr[j+1] = 0;	
+				}
+			}
+		}	
 	}
 
 	/*
@@ -167,7 +174,10 @@ public class Board {
 		
 		// grabbing a row from a 2D array
 		// if it's called arr then arr[i] grabs ONE row!
-	
+		for (int r = 0; r < board.length; r++) {
+			int[] temp = board[r];
+			slideLeft(temp);
+		}   
 		
 		
 		//visit every single row in the 2D array
