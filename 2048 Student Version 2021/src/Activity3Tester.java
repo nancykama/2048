@@ -10,7 +10,6 @@ public class Activity3Tester {
 		b3.populateOne();
 		b3.populateOne();
 		b3.populateOne();
-		b3.populateOne();
 		//create an array with some values you want to 
 		//slideRight. ie [2 0 0 0]
 		//invoke the slideRight method on the array 

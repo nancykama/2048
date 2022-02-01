@@ -154,7 +154,7 @@ public class Board {
 	 */
 
 	public void slideLeft(int[] arr) {
-		for (int i = 0; i < 3; i ++) {
+		for (int r = 0; r < 3; r ++) {
 			for (int j = 0; j < arr.length - 1; j++) {
 				if (arr[j+1] != 0 && arr [j] == 0) {
 					arr[j] = arr[j+1];
