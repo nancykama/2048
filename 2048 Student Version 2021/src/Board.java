@@ -114,7 +114,6 @@ public class Board {
 	 */
 
 	public void slideRight(int[] row) {
-		
 		for (int i = 0; i < 3; i ++) {
 			for (int j = 0; j < row.length -1; j++) {
 				if (row[j] != 0 && row [j+1] == 0) {
@@ -192,8 +191,11 @@ public class Board {
 	 */
 	public int[] getCol(int[][] data, int c) {
 		
-		//you can also add print out statements here
-		return new int[0];
+		int [] arr = new int[data[0].length];
+		for (int i = 0; i < data[0].length; i++) {
+			arr[i] = data[i][c];
+		}
+		return arr;
 		
 	}
 
@@ -204,8 +206,7 @@ public class Board {
 	 */
 
 	public void slideUp(int[] arr) {
-		/* calls a helper method */
-		// do not rewrite logic you already have!
+		slideLeft(arr);
 	}
 
 	/*
@@ -215,22 +216,15 @@ public class Board {
 	 * You must use slideUp and getCol for full credit.
 	 */
 	public void slideUp() {
-		
-		//visit every column index
-		//grab each column as an array using getCol -> keep track of it in a 1d array
-		// variable/reference
-		//have slideLeft perform manipulation on the array
-		// copy over the 1D array representation of the column
-		// back to the 2D board array
-
-		
-		
-		
+		for (int r = 0; r < board.length; r++) {
+			int[] temp = getCol(board, r);
+			slideUp(temp);
+		}  
+	
 	}
 
 	public void slideDown(int[] arr) {
-
-		
+		slideRight(arr);
 	}
 
 	/*
@@ -240,6 +234,10 @@ public class Board {
 	 */
 
 	public void slideDown() {
+		for (int r = 0; r < board.length; r++) {
+			int[] temp = getCol(board, r);
+			slideDown(temp);
+		} 
 
 	}
 
@@ -256,6 +254,14 @@ public class Board {
 	 */
 
 	public void combineRight() {
+		for (int r = 0; r < board.length; r++) {
+			for (int c = board.length - 1; c > 0; c--) {
+				if (board[r][c] == board[r][c-1]) {
+					board[r][c] = board[r][c]*2;
+					board[r][c-1] = 0;
+				}
+			}
+		}
 
 	}
 
@@ -265,6 +271,14 @@ public class Board {
 	 */
 
 	public void combineLeft() {
+		for (int r = 0; r < board.length; r++) {
+			for (int c = 0; c < board.length; c++) {
+				if (board[r][c] == board[r][c+1]) {
+					board[r][c] = board[r][c]*2;
+					board[r][c+1] = 0;
+				}
+			}
+		}
 		
 	}
 	
@@ -274,6 +288,14 @@ public class Board {
 	 */
 
 	public void combineUp() {
+		for (int r = 0; r < board.length; r++) {
+			for (int c = 0; c < board.length; c++) {
+				if (board[r][c] == board[r+1][c]) {
+					board[r+1][c] = board[r][c]*2;
+					board[r][c] = 0;
+				}
+			}
+		}
 
 	}
 
@@ -283,6 +305,14 @@ public class Board {
 	 */
 
 	public void combineDown() {
+		for (int r = 0; r < board.length; r++) {
+			for (int c = 0; c < board.length; c++) {
+				if (board[r][c] == board[r+1][c]) {
+					board[r][c] = board[r][c]*2;
+					board[r+1][c] = 0;
+				}
+			}
+		}
 
 	}
 
@@ -294,20 +324,29 @@ public class Board {
 	 * the combine and slide methods should not worry about each other's methods
 	 */
 	public void left() {
-		//1) numbers slide to the left
-		//2) combine
-		//3) slide
+		slideLeft();
+		combineLeft();
+		slideLeft();
 	}
 
 	public void right() {
+		slideRight();
+		combineRight();
+		slideRight();
 
 	}
 
 	public void up() {
+		slideUp();
+		combineUp();
+		slideUp();
 
 	}
 
 	public void down() {
+		slideDown();
+		combineDown();
+		slideDown();
 
 	}
 	
