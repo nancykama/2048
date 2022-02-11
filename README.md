@@ -1,15 +1,10 @@
-# 2048Starter
+# 2048
 
-### Clone
-Click on the Use this template button to clone the repository. Be sure to make it private.
+### Objective
+We started this project to replicate the code of a well known game called 2048. The goal is to connect the same numbers so they multiply to 2048. We started this project to practice what we learned about 2D arrays. We had to create a variety of methods in order to get the tiles to move and combine with other tiles. 
 
-# Import Project in Eclipse
-Clone the repository that was created after using the template button. Import the project during or after cloning. 
-If you have forgotten GitHub integration in ecipse, review this [document](https://studycs.org/github)
+### What I Learned
+This was a fun experience for me because I got to apply everything we learned about 2D arrays while recreating a game that I play often. I learned how to connect the rules of 2D arrays to "real life" scenarios and create a runnable program. 
 
-# Not Using Eclipse?
-All the files necessary to run the project is in the src folder. If you are using a different IDE, you should be able to create any Java project in your chosen IDE then simply make sure the files in the src folder are in your java project's src folder. 
 
-## Student Guide
-[Student Guide](https://docs.google.com/document/d/1ajDy8JXvY-S79Wgk2Ic-YRQ3gj1nkJX5nMyD1gYfGXQ/edit?usp=sharing)
 
