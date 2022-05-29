@@ -19,6 +19,7 @@ public class BoardGUI extends JPanel implements KeyListener, ActionListener{
 	Timer t; //used for bot 
 	
 	public BoardGUI() {
+		//creating board
 		b = new Tile[4][4];
 		colors = new Color[20];
 		t = new Timer(1000,this);
@@ -27,6 +28,7 @@ public class BoardGUI extends JPanel implements KeyListener, ActionListener{
 	}	
 	
 	public BoardGUI(int[][] d) {
+		//instantiating
 		b = new Tile[4][4];
 		colors = new Color[20];
 		t = new Timer(1000,this);
@@ -40,6 +42,7 @@ public class BoardGUI extends JPanel implements KeyListener, ActionListener{
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.addKeyListener(this);
 		
+		//visuals
 		colors[0] = new Color(0xc7b9ab); //2
 		colors[1] = new Color(0xeaded5); //4
 		colors[2] = new Color(0xe9dbc0); //8
